@@ -130,3 +130,8 @@ While visionary for its time (2016), the **Spreadsheet Space** does not meet tod
 - **Advanced encryption models**
 
 It should be seen as an **important step** in the evolution toward more open, modular, and secure data-sharing environments — but not the final answer.
+
+## Some Interesting Points
+
+- spreadsheet development is a form of programming
+- spreadsheets have recently incorporated features to support SQL queries,8 such as Microsoft Power Query and Google Docs Query

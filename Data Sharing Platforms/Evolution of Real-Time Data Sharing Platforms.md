@@ -119,3 +119,77 @@
 | 2012–2018 | Spreadsheet Space, Excel Online | Event-based | None | Basic E2EE | Semi-centralized |
 | 2018–2024 | Yjs, IPFS, CRDTs | P2P / Push-Pull | Automatic (CRDT) | Client-side E2EE | Decentralized |
 | 2025+ | FHE, Verifiable Sync | Federated / zero-trust | Cryptographic | Zero-knowledge | Composable / Distributed |
+
+## References and Resources
+
+This timeline and analysis is based on a combination of academic research papers, open-source project documentation, and historical documentation of key technologies. Below is a list of the primary resources and references used:
+
+### Academic Sources
+
+1. **Maresca, M. (2016)**  
+   *The Spreadsheet Space: Eliminating the Boundaries of Data Cross-Referencing*  
+   IEEE Computer, Sept. 2016.  
+   DOI: 10.1109/MC.2016.289
+
+2. **Gambetta, M. (2021)**  
+   *A Decentralized Framework for Cross Administrative Domain Data Sharing*  
+   PhD Thesis, University of Genoa.  
+   [Link](https://iris.unige.it/retrieve/e268c4cb-f929-a6b7-e053-3a05fe0adea1/phdunige_3490323.pdf)
+
+3. **Shapiro, M., et al. (2011)**  
+   *A comprehensive study of CRDTs*  
+   Research Report RR-7506, INRIA.  
+   [Link](https://hal.inria.fr/inria-00555588)
+
+4. **Sun, C., et al. (1998)**  
+   *Operational Transformation for Collaborative Internet Editing*  
+   Proc. CSCW '98.  
+   DOI: 10.1145/289444.289469
+
+5. **Nardi, B.A. (1993)**  
+   *A Small Matter of Programming: Perspectives on End-User Computing*  
+   MIT Press.
+
+---
+
+### Open Source and Technical Documentation
+
+6. **Yjs – CRDT Framework**  
+   [https://yjs.dev](https://yjs.dev)
+
+7. **Automerge – JSON CRDT Library**  
+   [https://automerge.org](https://automerge.org)
+
+8. **CryptPad – End-to-End Encrypted Collaboration**  
+   [https://cryptpad.org](https://cryptpad.org)
+
+9. **Replicache – Real-time Sync Engine**  
+   [https://replicache.dev](https://replicache.dev)
+
+10. **Logux – CRDT-Based Sync over WebSockets**  
+    [https://logux.io](https://logux.io)
+
+11. **IPFS and libp2p – Decentralized Web Protocols**  
+    [https://ipfs.io](https://ipfs.io)  
+    [https://libp2p.io](https://libp2p.io)
+
+12. **Matrix Protocol – Decentralized Messaging**  
+    [https://matrix.org](https://matrix.org)
+
+---
+
+### Security and Future Tech
+
+13. **zk-SNARKs and Zero-Knowledge Proofs**  
+    Zcash Foundation & Electric Coin Company  
+    [https://z.cash/technology/](https://z.cash/technology/)
+
+14. **Homomorphic Encryption and FHE Libraries**  
+    Microsoft SEAL: [https://www.microsoft.com/en-us/research/project/microsoft-seal/](https://www.microsoft.com/en-us/research/project/microsoft-seal/)
+
+15. **MPC & Verifiable Computation**  
+    Tutorials from Crypto 101, Stanford CS251, and relevant literature from IACR.
+
+---
+
+These sources span historical evolution, collaborative systems theory, encryption and privacy models, and the implementation details of modern decentralized and conflict-free synchronization frameworks.
