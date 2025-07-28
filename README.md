@@ -9,7 +9,7 @@ A historical and technical overview of how collaborative data systems evolved fr
 
 ## 2. Core Technical Concepts
 
-- [CRDT](./Terms/CRDT.md)  
+- [CRDT](./Data%20Sharing%20Platforms/Terms/CRDT.md)  
 - [OT (Operational Transformation)](./Data%20Sharing%20Platforms/Terms/OT.md)  
 - [Pub-sub (Publish-Subscribe Model)](./Data%20Sharing%20Platforms/Terms/Pub-sub.md)  
 - [Eventual Consistency](./Data%20Sharing%20Platforms/Terms/Eventual%20Consistency.md)  
