@@ -19,8 +19,8 @@ A historical and technical overview of how collaborative data systems evolved fr
 
 Detailed, critically reviewed summaries of key papers relevant to my thesis.
 
-- [The Spreadsheet Space](./Data%20Sharing%20Platforms/articles/The%20Spreadsheet%20Space.md)  
-- [A Decentralized Framework for Cross Administrative Domain Data Sharing](./Data%20Sharing%20Platforms/articles/A%20Decentralized%20Framework%20for%20Cross%20Administrative.md)  
+- [The Spreadsheet Space](./Data%20Sharing%20Platforms/articles/The%20Spreadsheet%20Space)  
+- [A Decentralized Framework for Cross Administrative Domain Data Sharing](./Data%20Sharing%20Platforms/articles/A%20Decentralized%20Framework%20for%20Cross%20Administrative)  
 PhD thesis by Gambetta, extending Spreadsheet Space into a federated, zero-knowledge architecture.
 
 ## 4. To-Do: Research and Comparison Planning
