@@ -2,8 +2,6 @@
 
 *(1980s → 2025)*
 
-* * *
-
 ## 1. The Early Era: File-Based and Manual Sharing (1980s–1990s)
 
 ### Characteristics
@@ -12,7 +10,7 @@
 - Data shared via floppy disks, email attachments, or file servers.
 - Spreadsheets like **Lotus 1-2-3** and early **Excel** were purely local.
 
-### Technologies
+### Key Technologies
 
 - SMB/NFS file sharing
 - Versioning done manually or via file naming (`budget_v2_final_FINAL.xls`)
@@ -23,16 +21,23 @@
 
 ### Characteristics
 
-- Shared drives and LAN-based collaboration tools emerged.
-- Microsoft Excel added **external links to other spreadsheets** (e.g., `[filename]Sheet!A1`).
-- Basic **read/write file locking**, but no multi-user editing.
+- Shared drives and LAN-based collaboration tools emerged in offices.
+- Microsoft Excel introduced **external links to other spreadsheets**, enabling formulas like `[filename]Sheet!A1` to reference data in other workbooks.
+- Basic **read/write file locking** helped prevent simultaneous editing conflicts. Users had to take turns editing shared files.
+- Users had to manually open linked files to ensure data was up to date, since Excel couldn't recalculate values from closed external workbooks.
 
-### Technologies
+### Key Technologies
 
-- Windows file sharing (SMB), SharePoint (basic Excel Services)
-- Client-server sync logic (e.g., via polling)
-- No true real-time — just **periodic refresh**
-- Security = Windows ACLs or password protection (weak)
+- Windows file sharing using **SMB protocol** (e.g., `\\server\folder\file.xlsx`)
+- Early versions of **SharePoint** (with rudimentary Excel Services)
+- Client-server sync via **polling or periodic refresh**, not live syncing. polling means the client asks the server for updates at intervals.
+- **Security** based on Windows ACLs or basic password protection
+
+### Limitations
+
+- No real-time collaboration or simultaneous editing
+- External links were fragile across systems or renamed files
+- No cloud-based access; file sharing required local network or VPN
 
 ## 3. The Cloud-Based Syncing Era (2006–2012)
 
@@ -150,8 +155,6 @@ This timeline and analysis is based on a combination of academic research papers
    *A Small Matter of Programming: Perspectives on End-User Computing*  
    MIT Press.
 
----
-
 ### Open Source and Technical Documentation
 
 6. **Yjs – CRDT Framework**  
@@ -176,8 +179,6 @@ This timeline and analysis is based on a combination of academic research papers
 12. **Matrix Protocol – Decentralized Messaging**  
     [https://matrix.org](https://matrix.org)
 
----
-
 ### Security and Future Tech
 
 13. **zk-SNARKs and Zero-Knowledge Proofs**  
@@ -189,7 +190,3 @@ This timeline and analysis is based on a combination of academic research papers
 
 15. **MPC & Verifiable Computation**  
     Tutorials from Crypto 101, Stanford CS251, and relevant literature from IACR.
-
----
-
-These sources span historical evolution, collaborative systems theory, encryption and privacy models, and the implementation details of modern decentralized and conflict-free synchronization frameworks.

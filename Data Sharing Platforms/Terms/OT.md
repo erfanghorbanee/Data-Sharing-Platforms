@@ -1,7 +1,6 @@
 # OT
 
-**Operational Transformation (OT)** is an algorithmic technique for supporting **real-time collaboration** where **multiple users edit shared content simultaneously**.
-
+**Operational Transformation (OT)** is an algorithmic technique for supporting **real-time collaboration** where **multiple users edit shared content simultaneously**.  
 It ensures that **all users eventually see the same result**, even if they make **conflicting edits at the same time**.
 
 ## How it works
@@ -9,19 +8,47 @@ It ensures that **all users eventually see the same result**, even if they make 
 OT works by:
 
 1. **Capturing edits as operations** (e.g., “insert ‘x’ at position 3”).
-2. **Transforming operations** against each other when they arrive out of order — so they can be applied **in a way that preserves intention**.
+2. **Transforming operations** against each other when they arrive out of order — so they can be applied **in a way that preserves user intent**.
 
-> Example:
+> **Example:**
 >
-> * User A inserts “a” at position 5.
-> * User B deletes character at position 4.
-> * These edits are transformed based on their relative positions so both actions can coexist without corrupting the document.
+> Initial text: `"Hello World"`
+>
+> - **User A** wants to insert `"X"` at position **6** (after `"Hello "`).
+> - **User B** wants to delete the character at position **5** (the space).
+>
+> **If the delete is processed first:**
+>
+> - Text becomes `"HelloWorld"`
+> - The insert must shift from position **6** to **5**, because removing the space shortens the string.
+> - Result: `"HelloXWorld"`
+>
+> **If the insert is processed first:**
+>
+> - Text becomes `"Hello XWorld"`
+> - The space is still at position **5**, so the delete can proceed **unchanged**.
+> - Result: `"HelloXWorld"`
 
-## Used in:
+**Note:**
 
-* **Google Docs**
-* Etherpad (early versions)
-* Microsoft Word Online (hybrid with locking)
+OT does not need to globally decide “which operation comes first”.
+
+It only needs to:
+
+- Detect when operations are concurrent
+- Use transformation functions to merge them correctly, preserving user intent
+
+## History and Use
+
+- **Introduced in the late 1980s**, with academic work continuing into the early 2000s.
+- **Popularized in real-world apps in the 2000s–2010s**.
+- **Still in use**, but **less dominant** in new systems due to the rise of CRDTs.
+
+### Used in
+
+- **Google Docs** (since mid-2000s; hybrid approaches evolved over time)
+- **Etherpad** (2008–present in some forks)
+- **Microsoft Word Online** (partially, combined with locking and other sync models)
 
 ## Pros and Cons
 
@@ -36,6 +63,6 @@ OT works by:
 | Feature            | OT                                | CRDT                         |
 | ------------------ | --------------------------------- | ---------------------------- |
 | Ordering required? | Yes, via a central server         | No, order-independent        |
-| Easy to implement? | ❌ Hard (esp. for undo, branching) | ✅ Easier for many data types |
-| Used in            | Google Docs, Word                 | Yjs, Automerge               |
-| Offline-friendly?  | 🚫 Not natively                   | ✅ Yes                        |
+| Implementation     | Difficult for undo, branching     | Simpler for many data types  |
+| Used in            | Google Docs, Word Online          | Yjs, Automerge               |
+| Offline support    | Not natively                      | Yes, built-in                |

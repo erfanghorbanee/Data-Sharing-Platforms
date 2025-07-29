@@ -4,8 +4,6 @@
 
 It appears that **SpreadSheetSpace** and **DocSpace S.r.l.** are effectively the *same entity*—DocSpace S.r.l. is the Italian company behind the SpreadSheetSpace product. SpreadSheetSpace is a suite of Excel add‑ins (“Link”, “Sync”, “Co‑Edit”) developed and marketed by DocSpace S.r.l., based in Genova, Italy
 
-&nbsp;
-
 ## 2. Has Spreadsheet Space Improved Since 2016?
 
 Yes, the **Spreadsheet Space** architecture has seen some updates since 2016, particularly in terms of **availability**, **federation**, and **privacy controls**. However, it still lacks key capabilities expected in modern real-time data sharing platforms, such as **conflict-free real-time collaboration**, **offline editing with merge**, and **peer-to-peer decentralization**.

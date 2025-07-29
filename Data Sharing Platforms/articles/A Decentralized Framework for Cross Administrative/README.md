@@ -6,13 +6,9 @@
 **Advisor**: Prof. Massimo Maresca  
 **Available at**: <https://iris.unige.it/retrieve/e268c4cb-f929-a6b7-e053-3a05fe0adea1/phdunige_3490323.pdf>
 
-* * *
-
 ## Overview
 
 This thesis presents an evolved version of the **Spreadsheet Space** platform, transforming it into a **decentralized architecture** that supports **cross-domain collaboration**, **fine-grained sharing**, and **privacy-preserving synchronization**. It introduces a framework that allows spreadsheet users and software platforms to **share data securely**, across organizational boundaries, without relying on a single central authority.
-
-* * *
 
 ## Key Concepts and Components
 
@@ -59,8 +55,6 @@ This thesis presents an evolved version of the **Spreadsheet Space** platform, t
 - **Subscription**: Target users retrieve views and create synchronized images.
 - **Update propagation**: Real-time event notifications manage view/image alignment.
 
-* * *
-
 ## Technical Architecture
 
 - **Hybrid model**: Decentralized control + centralized persistence.
@@ -68,8 +62,6 @@ This thesis presents an evolved version of the **Spreadsheet Space** platform, t
 - **Client-server architecture**, but clients operate independently.
 - **Manual or automatic synchronization** modes.
 - **Data-level access control** (cell/table-level granularity).
-
-* * *
 
 ## Useful Terms for Your Thesis
 
@@ -83,8 +75,6 @@ This thesis presents an evolved version of the **Spreadsheet Space** platform, t
 | **Spreadsheet Overlay** | A structured collaboration pattern using forms and views |
 | **Federated Control Plane** | Distributed control components managed across domains |
 | **Zero-Knowledge Architecture** | Servers cannot decrypt user data; only endpoints hold keys |
-
-* * *
 
 ## Relevance to Your Thesis
 
@@ -100,8 +90,6 @@ This work offers a **rich architectural framework** for real-time data sharing w
 - A case study in evolving from centralized to **federated architectures**
 - A contrast to modern **CRDT-based real-time editors**: this system does **not handle concurrent editing or conflict resolution**
 
-* * *
-
 ## Limitations to Note
 
 - No CRDT or OT integration → **does not support multi-user concurrent edits**
@@ -109,16 +97,12 @@ This work offers a **rich architectural framework** for real-time data sharing w
 - Privacy model depends on **infrastructure trust** in always-on view servers
 - Complexity of **setup and federation** may hinder adoption in lightweight scenarios
 
-* * *
-
 ## Suggested Sections to Read in Detail
 
 - Chapter 3: Federated Spreadsheet Space Design
 - Chapter 4: Security Infrastructure and Cryptographic Services
 - Chapter 5: Collaboration Models and Overlays
 - Chapter 6: Implementation and Case Studies
-
-* * *
 
 ## Conclusion
 
