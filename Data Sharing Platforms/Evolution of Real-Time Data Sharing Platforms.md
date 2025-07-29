@@ -49,31 +49,37 @@
 
 ### Key Technologies
 
-- **Operational Transformation (OT)**:
-
-  - Used in **Google Docs** to resolve concurrent edits.
-  - Reorders operations to maintain consistency.
+- **Operational Transformation (OT)** to resolve concurrent edits
 - AJAX + HTTP polling → then **WebSockets** for push-based updates
-
+  - In early collaborative tools (like early Google Docs), the browser would poll the server every few seconds using AJAX to check for updates.
+  - With later upgrade, WebSockets allowed the server to push updates directly to the client in real-time, instead of waiting for the client to ask.
 - Centralized servers host the "source of truth"
-
 - SSL/TLS for in-transit security; encryption at rest on servers
 
-- Still limited cross-platform or decentralized support
+### Limitations
 
-## 4. The Collaborative Model Formalized (2012–2018)
+- **Polling inefficiency**: Early AJAX-based polling caused high latency and unnecessary network traffic.
+- **Centralized control**: All data stored and managed by a single provider. Server outages could disrupt all users.
+- **Encryption at rest is limited**: It protects stored data from physical breaches, but not from the service provider, who typically holds the decryption keys and can access the data.
+- **No peer-to-peer collaboration**: All sync routed through central servers, no direct device-to-device sharing.
+- **Cross-platform inconsistencies**: Browser support varied; mobile and desktop integration was weak.
+
+## 4. Engineering Collaboration and Modularity in Spreadsheets (2012–2018)
 
 ### Characteristics
 
 - Rise of "end-user programming" in spreadsheets
-- Recognition that spreadsheets are **programs**, not just static data
-- Start of research into **fine-grained, cell-level sharing**, e.g., Maresca's *Spreadsheet Space* (2016)
-
-### Key Innovations
-
-- Formal models of spreadsheet computation (e.g., views, overlays)
-- Experimental platforms for structured collaboration
+- Start of research into **cell-level sharing**, e.g., Maresca's *Spreadsheet Space* (2016)
+  - Publishing a specific cell or range as a first-class, secure, shareable object
+  - The ability to control who can see/edit that cell or view, even if they can’t access the full spreadsheet
+  - Supporting event-driven or real-time sync of that cell, not just static reference
+  - Decoupling the data reference from file paths or storage locations
+  - Formal models of spreadsheet computation (e.g., views, overlays)
 - Partial integration with external data sources (SQL, APIs)
+- Big companies focused on making real-time collaboration work at scale (support millions of users)
+
+#### Limitations
+
 - Still **centralized** in architecture and tied to specific ecosystems
 
 ## 5. Decentralization and Conflict-Free Collaboration (2018–Present)
