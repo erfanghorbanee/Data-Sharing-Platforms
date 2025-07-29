@@ -72,3 +72,28 @@ Compare the above companies' approaches in terms of:
   [MDPI Applied Sciences](https://www.mdpi.com/2076-3417/14/16/6940)  
 - User-controlled, auditable data-sharing over blockchain networks  
   [Frontiers in Blockchain](https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2020.497985/full)
+
+### LibreOffice: Real-Time Collaboration Status and Research Directions
+
+Investigate how LibreOffice handles collaboration and data sharing:
+
+- **Collabora Online** is the main pathway for real-time collaborative editing in LibreOffice. It provides web-based spreadsheet and document co-authoring using a client-server model and supports integration with distributed platforms like Nextcloud Global Scale.
+  - Collabora enables collaborative spreadsheet editing, but depends on server-side infrastructure and is not natively integrated into LibreOffice desktop applications.
+
+- **LibreOffice Desktop (Calc/Writer)** does **not currently support real-time collaboration**. However, there are **experimental proposals** to support **peer-to-peer collaboration** using networks like **Jami** and **DHTNet**.
+  - These proposals aim to remove server dependence and provide privacy-preserving, offline-capable collaboration, but they are not yet production-ready.
+
+#### Key Articles and Sources
+
+- [Collaborative Editing – LibreOffice Wiki](https://wiki.documentfoundation.org/Collaborative_Editing)
+- [Peer-to-Peer Collaboration Design Proposal (2024)](https://design.blog.documentfoundation.org/2024/07/17/peer-to-peer-collaboration-with-libreoffice/)
+- [LibreOffice Online Overview](https://wiki.documentfoundation.org/Development/LibreOffice_Online)
+- [Collabora + Nextcloud Scale Collaboration Case Study](https://www.collaboraonline.com/blog/nextcloud-and-collabora-scale-real-time-collaboration-to-hundreds-of-millions-of-users/)
+
+#### Suggested Actions
+
+- Evaluate the architecture of Collabora Online and how it compares to Google Docs, Excel Online, and CRDT-based systems.
+- Analyze why LibreOffice has not integrated CRDT or OT models into its desktop suite.
+- Track developments in the peer-to-peer collaboration initiative and consider how it could influence decentralized data sharing architectures.
+
+This case will help identify the limitations of retrofitting real-time collaboration into large, traditional office suites and the potential role of open-source projects in pioneering decentralized collaboration.
