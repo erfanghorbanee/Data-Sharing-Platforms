@@ -65,7 +65,7 @@ Text is tricky because:
 * Inserting or deleting characters affects positions.
 * Concurrent edits must resolve deterministically.
 
-### CRDT-based text editors (like Yjs or Automerge) often:
+### CRDT-based text editors (like Yjs or Automerge) often
 
 1. **Assign unique IDs to each character or element**, such as `(client_id, counter)` tuples.
 2. **Track inserts/deletes relative to these IDs**, not absolute positions.
@@ -82,13 +82,41 @@ Text is tricky because:
 
 The final order might be `"AB"` or `"BA"`, but **all devices will agree**, because the tie is broken by comparing the unique IDs deterministically (e.g. by client ID).
 
-## CRDT vs Traditional Sync
+This means:
 
-| Model                               | Sync Behavior                      | Handles Conflicts?                  | Used in                     |
-| ----------------------------------- | ---------------------------------- | ----------------------------------- | --------------------------- |
-| **CRDT**                            | Merges automatically               | ✅ Yes, by design                    | Yjs, Automerge, Matrix      |
-| **OT (Operational Transformation)** | Uses transform rules               | ✅ Yes                               | Google Docs                 |
-| **Central sync (event-based)**      | Pushes state from a central server | ❌ No — assumes one writer at a time | Spreadsheet Space |
+* Every device (user’s app, browser, etc.) applies **the same rule** to decide the order.
+* For example: “if two elements are concurrent, order them by comparing their IDs lexicographically.”
+
+So:
+
+* If `(alice, 1)` < `(bob, 1)` alphabetically (or numerically), then all devices will insert `"A"` before `"B"` → result: `"AB"`
+* This is a **deterministic rule**, meaning **every device independently makes the same decision**, even if the edits arrived in different order due to network delay.
+
+**Why is this important?**
+
+In distributed, real-time collaboration:
+
+* Devices often receive edits **out of order**.
+* CRDTs use these unique IDs and ordering rules to ensure **eventual consistency** — every replica (device) converges to the same document state **without needing a central server** or lock.
+
+## CRDT vs OT vs Naïve Event-Based Sync
+
+In collaborative systems, all synchronization approaches are event-driven at some level. The key difference lies in **how concurrent operations are handled** and **where conflict resolution happens**.
+
+| Model                               | Conflict Handling                 | Merge Logic Location     | Assumes Central Server? | Used In                    |
+|------------------------------------|----------------------------------|---------------------------|--------------------------|----------------------------|
+| **CRDT**                            | ✅ Automatic conflict resolution | In the data structure     | ❌ (can be decentralized) | Yjs, Automerge, Matrix     |
+| **OT (Operational Transformation)** | ✅ via transform functions       | In client/server logic    | ✅ Yes (usually central)  | Google Docs                |
+| **Naïve event-push**                | ❌ Overwrites possible           | None                      | ✅ Yes                   | Spreadsheet Space (2016)   |
+
+### Key Takeaways
+
+* **All models use events** to propagate changes between users.
+  * Yjs uses WebSockets or WebRTC to send CRDT updates.
+  * Google Docs uses event queues to deliver OT operations and reconcile them.
+* **Naïve event-based systems** treat edits as push notifications with no built-in merge handling.
+* **OT** systems transform incoming edits to maintain consistency, often requiring a central server for sequencing.
+* **CRDTs** embed merge logic directly into the data structures, making them suitable for decentralized or peer-to-peer use cases.
 
 ## Real-World Tools That Use CRDTs
 
@@ -109,5 +137,6 @@ The final order might be `"AB"` or `"BA"`, but **all devices will agree**, becau
 
 ## Final Takeaway
 
-> **CRDTs let apps work offline, sync automatically, and merge without human intervention.**
-> They're hard to build but ideal for decentralized, resilient, collaborative experiences.
+* CRDTs let apps work offline, sync automatically, and merge without human intervention.
+* They're hard to build but ideal for decentralized, resilient, collaborative experiences.
+* Even CRDT-based tools don’t "replace events" — they wrap conflict resolution logic around events.

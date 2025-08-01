@@ -103,9 +103,15 @@
 - No trust in the server — encryption is **client-side**
 - Rich access control + identity mechanisms (e.g., DIDs, OAuth2, WebAuthn)
 
-* * *
+## Modern System Architectures
 
-## 6. Future Directions (2025+)
+Most real-time collaborative tools today combine:
+
+- **Event delivery** (e.g., via WebSockets, WebRTC, Matrix, or pub-sub)
+- **Merge-aware sync logic** (CRDT or OT)
+- **Optional central coordination** for user identity, presence, and document hosting
+
+## Future Directions
 
 ### Likely Trends
 
@@ -157,42 +163,38 @@ This timeline and analysis is based on a combination of academic research papers
    Proc. CSCW '98.  
    DOI: 10.1145/289444.289469
 
-5. **Nardi, B.A. (1993)**  
-   *A Small Matter of Programming: Perspectives on End-User Computing*  
-   MIT Press.
-
 ### Open Source and Technical Documentation
 
-6. **Yjs – CRDT Framework**  
+5. **Yjs – CRDT Framework**  
    [https://yjs.dev](https://yjs.dev)
 
-7. **Automerge – JSON CRDT Library**  
+6. **Automerge – JSON CRDT Library**  
    [https://automerge.org](https://automerge.org)
 
-8. **CryptPad – End-to-End Encrypted Collaboration**  
+7. **CryptPad – End-to-End Encrypted Collaboration**  
    [https://cryptpad.org](https://cryptpad.org)
 
-9. **Replicache – Real-time Sync Engine**  
+8. **Replicache – Real-time Sync Engine**  
    [https://replicache.dev](https://replicache.dev)
 
-10. **Logux – CRDT-Based Sync over WebSockets**  
+9. **Logux – CRDT-Based Sync over WebSockets**  
     [https://logux.io](https://logux.io)
 
-11. **IPFS and libp2p – Decentralized Web Protocols**  
+10. **IPFS and libp2p – Decentralized Web Protocols**  
     [https://ipfs.io](https://ipfs.io)  
     [https://libp2p.io](https://libp2p.io)
 
-12. **Matrix Protocol – Decentralized Messaging**  
+11. **Matrix Protocol – Decentralized Messaging**  
     [https://matrix.org](https://matrix.org)
 
 ### Security and Future Tech
 
-13. **zk-SNARKs and Zero-Knowledge Proofs**  
+12. **zk-SNARKs and Zero-Knowledge Proofs**  
     Zcash Foundation & Electric Coin Company  
     [https://z.cash/technology/](https://z.cash/technology/)
 
-14. **Homomorphic Encryption and FHE Libraries**  
+13. **Homomorphic Encryption and FHE Libraries**  
     Microsoft SEAL: [https://www.microsoft.com/en-us/research/project/microsoft-seal/](https://www.microsoft.com/en-us/research/project/microsoft-seal/)
 
-15. **MPC & Verifiable Computation**  
+14. **MPC & Verifiable Computation**  
     Tutorials from Crypto 101, Stanford CS251, and relevant literature from IACR.
