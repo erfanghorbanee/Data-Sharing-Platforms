@@ -137,6 +137,6 @@ In collaborative systems, all synchronization approaches are event-driven at som
 
 ## Final Takeaway
 
-* CRDTs let apps work offline, sync automatically, and merge without human intervention.
-* They're hard to build but ideal for decentralized, resilient, collaborative experiences.
+* In CRDT systems, the merge algorithm is built into the structure itself — there's no need for external coordination to resolve conflicts.
+* Ideal for decentralized and collaborative experiences.
 * Even CRDT-based tools don’t "replace events" — they wrap conflict resolution logic around events.
