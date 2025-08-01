@@ -48,3 +48,14 @@ While **Spreadsheet Space** has evolved in terms of decentralization and privacy
 University of Genoa PhD Thesis (2021):  
 **"Real-Time Collaboration in the Spreadsheet Space"**  
 Available at: <https://iris.unige.it/retrieve/e268c4cb-f929-a6b7-e053-3a05fe0adea1/phdunige_3490323.pdf>
+
+## 3. Are CRDT, OT, and other modern models still using events under the hood?
+
+Yes — **CRDT-based**, **OT-based**, and even newer synchronization models are still **event-driven at the transport layer**. What differentiates them is **how they handle concurrent updates**, not whether they use events.
+
+- **All models rely on events** to propagate changes (e.g., via WebSockets, WebRTC, or Matrix).
+- **CRDTs** merge updates deterministically using logic embedded in the data structure itself.
+- **OT systems** use transformation rules to ensure consistency, often requiring a centralized server.
+- **Naïve event-push systems** (like early Spreadsheet Space) do not handle conflicts and assume one writer at a time.
+
+> In modern systems, **event delivery and conflict resolution are separated**. Event-based transport is universal — the key difference is whether the system has a **merge-aware layer (like CRDT or OT)** on top of those events.
