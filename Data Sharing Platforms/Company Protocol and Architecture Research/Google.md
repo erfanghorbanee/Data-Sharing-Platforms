@@ -50,20 +50,31 @@ This article provides a concise breakdown of how Google Docs achieves real-time 
 | Scalability            | Excellent (centralized scaling)            | Better in decentralized environments  |
 | Complexity             | Complex transform logic                    | Higher overhead per client            |
 
+### Real-World Performance Comparisons
+
+To compare the efficiency of OT vs. CRDTs, consider this scenario:
+
+- **1000 concurrent users editing a document.**
+- Each user makes **1 edit per second**.
+- **Network latency = 100ms.**
+
+#### Using OT
+
+- The server processes **1000 transformations per second**.
+- Network cost: **Minimal, only sends necessary transformations.**
+
+#### Using CRDTs
+
+- Each user syncs with **999 other users**.
+- Bandwidth overhead: **Massive (O(n²) sync complexity)**.
+- Memory usage: **Higher due to multiple stored versions.**
+
 ## 4. Why Google Uses OT
 
 - **Immediate consistency** and predictability in collaborative text editing.
 - Optimized for **highly structured document workflows**, like those in Docs and Sheets.
 
 CRDTs are more attractive for **offline or decentralized use cases**, but at Google’s scale and operational model, OT remains more efficient.
-
-## Takeaways
-
-- Google Docs implements **Operational Transform** over a central server architecture, enabling:
-  - Millisecond-level edit propagation
-  - Strong consistency despite concurrent editing
-- **CRDTs are emerging** as a peer-to-peer, offline-first alternative but haven't replaced OT in Google’s system yet.
-- For spreadsheet-like real-time collaboration at scale, OT remains dominant—but future shifts toward CRDT-based models may emerge in decentralized tools.
 
 ## Source
 
