@@ -59,3 +59,42 @@ Yes — **CRDT-based**, **OT-based**, and even newer synchronization models are 
 - **Naïve event-push systems** (like early Spreadsheet Space) do not handle conflicts and assume one writer at a time.
 
 > In modern systems, **event delivery and conflict resolution are separated**. Event-based transport is universal — the key difference is whether the system has a **merge-aware layer (like CRDT or OT)** on top of those events.
+
+## 3. Why Do CRDTs Have Limited Undo/Redo (No Clear History)?
+
+### 1. No Clear Global History
+
+CRDTs do **not maintain a global total order of operations**, only **partial causal orderings** (e.g., using vector clocks or Lamport timestamps).
+
+- Undo/redo mechanisms usually depend on a **linear, user-visible history** (e.g., "undo last delete").
+- CRDTs allow concurrent edits and **merge** them, which makes it unclear what should be undone — and in what order.
+
+### 2. Operations Are Not Reversible
+
+CRDT operations are:
+
+- **Commutative** (order doesn’t matter),
+- **Idempotent** (safe to reapply),
+- **Associative** (grouping doesn’t matter),
+
+But they are **not inherently reversible**:
+
+- An operation like `add("X")` may not retain enough metadata to correctly define `remove("X")` as an inverse.
+- No general guarantee exists that inverse operations will cleanly revert previous states, especially across replicas.
+
+### 3. Limited Intent Preservation
+
+Undo in collaborative apps often means **reverting the last action *you* performed**.
+
+- CRDTs don’t track **who performed which operation**, unless explicitly extended.
+- Without **user attribution** or session-specific metadata, it’s hard to implement **intent-based undo**.
+
+### 4. Workarounds Require Explicit History
+
+Some approaches to approximate undo/redo:
+
+- **Operational logging**: Keep a separate log of user actions (like in Operational Transformation-based systems) — but this adds overhead and partially defeats CRDTs’ simplicity.
+
+- **CRDT + version vectors**: You can snapshot state and allow undo/redo by replaying or rolling back — but this still lacks fine-grained, user-intent-preserving control.
+
+- **Session-based undo**: Some CRDT implementations support per-session or per-user undo stacks — but this requires auxiliary metadata and custom logic.
