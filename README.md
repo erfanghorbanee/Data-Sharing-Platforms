@@ -1,6 +1,6 @@
 # Data Sharing Platforms – Knowledge Base
 
-This repository contains a structured collection of concepts, summaries, and annotated research related to the design and evolution of real-time, secure, and decentralized data sharing platforms. It is organized to support thesis development and research workflows.
+This repository contains a structured collection of concepts, summaries, and annotated research related to the design and evolution of real-time, secure, and decentralized data sharing platforms. It is organized to support my thesis development and research workflows.
 
 ## 1. Evolution
 
@@ -27,37 +27,27 @@ PhD thesis by Gambetta, extending Spreadsheet Space into a federated, zero-knowl
 
 ### Modern Articles to Read
 
-- A recent research article on advanced real-time table-sharing using CRDT or decentralized frameworks (e.g., “PS‑CRDTs: CRDTs in highly volatile environments”)  
+- A recent research article on advanced real-time table-sharing using CRDT or decentralized frameworks (e.g., “PS‑CRDTs: CRDTs in highly volatile environments”)
   [Frontiers in Blockchain](https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2020.497985/full)  
+
 - A case study of real-time collaborative table editing using modern distributed sync techniques  
   [MDPI IJGI](https://www.mdpi.com/2220-9964/13/12/441)
 
+- A cutting-edge hybrid approach combining CRDTs and OT for real-time collaborative editing
+  [Eg-walker: Towards the best of both worlds in collaborative editing (EuroSys 2025)](https://arxiv.org/abs/2409.14252)
+
+- A decentralized replication protocol based on OT, avoiding central coordination
+  [Proposes CCR (Coordination-Free Collaborative Replication) based on Operational Transformation (arXiv, 2024)](https://arxiv.org/abs/2409.09934)
+
+- A thorough empirical and theoretical comparison between OT and CRDT models in co-editors
+  [Real Differences between OT and CRDT for Co-Editors (arXiv, 2019)](https://arxiv.org/abs/1810.02137)
+
 ### Company Protocol and Architecture Research
-
-#### Google (Docs / Sheets)
-
-- Real-time sync using OT and microservice architecture  
-  [Google Docs Architecture Analysis](https://sderay.com/google-docs-architecture-real-time-collaboration/)
-
-#### Microsoft (Excel Online)
-
-- Real-time co-authoring system integrated with SharePoint and OneDrive  
-  [Excel Web App Co-Authoring](https://www.microsoft.com/en-us/microsoft-365/blog/2013/11/19/real-time-co-authoring-in-the-excel-web-app-why-and-how-we-did-it/)
 
 #### Amazon (AWS)
 
 - Amazon Redshift and AWS Data Exchange for secure large-scale table sharing  
   [Optimizing Data Sharing on AWS](https://www.cloudthat.com/resources/blog/optimizing-data-sharing-strategies-with-amazon-redshift-data-sharing/)
-
-### Comparison
-
-Compare the above companies' approaches in terms of:
-
-- Sync model (e.g., OT vs event-driven vs CRDT)
-- Infrastructure design (e.g., central, distributed, peer-to-peer)
-- Encryption and access control
-- Scalability and latency
-- Domain applicability (e.g., enterprise, public cloud, collaborative tooling)
 
 ### Matrix Protocol for Table Data Sharing
 
