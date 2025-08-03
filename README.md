@@ -23,7 +23,9 @@ Detailed, critically reviewed summaries of key papers relevant to my thesis.
 - [A Decentralized Framework for Cross Administrative Domain Data Sharing](./Data%20Sharing%20Platforms/articles/A%20Decentralized%20Framework%20for%20Cross%20Administrative)  
 PhD thesis by Gambetta, extending Spreadsheet Space into a federated, zero-knowledge architecture.
 
-## 4. To-Do: Research and Comparison Planning
+## 4. Company Protocol and Architecture Research
+
+## 5. To-Do: Research and Comparison Planning
 
 ### Modern Articles to Read
 
@@ -41,13 +43,6 @@ PhD thesis by Gambetta, extending Spreadsheet Space into a federated, zero-knowl
 
 - A thorough empirical and theoretical comparison between OT and CRDT models in co-editors
   [Real Differences between OT and CRDT for Co-Editors (arXiv, 2019)](https://arxiv.org/abs/1810.02137)
-
-### Company Protocol and Architecture Research
-
-#### Amazon (AWS)
-
-- Amazon Redshift and AWS Data Exchange for secure large-scale table sharing  
-  [Optimizing Data Sharing on AWS](https://www.cloudthat.com/resources/blog/optimizing-data-sharing-strategies-with-amazon-redshift-data-sharing/)
 
 ### Matrix Protocol for Table Data Sharing
 
